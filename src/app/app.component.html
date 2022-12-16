@@ -1,0 +1,38 @@
+<nav class="navbar" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      SpaceX GraphQL API
+    </div>
+  </div>
+</nav>
+<h3> Task 1 </h3>
+<h5> A list which contains available data</h5>
+<div *ngFor="let launch of data.launchesPast">
+  <p>Mission Name: {{launch.mission_name}}  <br>
+  Launch Date: {{launch.launch_date_local}} <br>
+  Launch Success: {{launch.launch_success}} <br>
+  =========================================</p>
+  </div>
+  <h3> Task 2</h3>
+  <h5> Display data in table.</h5>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Mission Name:</th>
+          <th scope="col">Launch Date:</th>
+          <th scope="col">Launch Success:</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let launch of data.launchesPast">
+          <th scope="row">{{launch.mission_name }}</th>
+          <td>{{ launch.launch_date_local }}</td>
+          <td>{{ launch.launch_success }}</td>
+      
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<router-outlet></router-outlet>
